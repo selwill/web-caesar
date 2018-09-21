@@ -14,7 +14,7 @@ img {
     margin-right: auto;
 }
 </style>
-    <body background="https://drive.google.com/uc?id=1q8O7pIYBXas8Jwwgx6yteDSZfu3BTgvG" style ="width:100%;">
+    <body background="https://drive.google.com/uc?id=1q8O7pIYBXas8Jwwgx6yteDSZfu3BTgvG" style ="width:70%;">
         <h1>Hello world!</h1>
         <p><a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>
     </body>
