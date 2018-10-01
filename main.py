@@ -8,26 +8,26 @@ app.config['DEBUG'] = True
 form = """
 <!DOCTYPE html>
 <html>
-<style>
-form {{
+    <style>
+        form {{
                 background-color: #eee;
                 padding: 20px;
                 margin: 0 auto;
                 width: 540px;
                 font: 16px sans-serif;
                 border-radius: 10px;
-            }
-            textarea {
+        }}
+        textarea {{
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }}
-img {{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}}
-</style>
+        }}
+        img {{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }}
+    </style>
     <body background="https://drive.google.com/uc?id=1q8O7pIYBXas8Jwwgx6yteDSZfu3BTgvG" style ="width:70%;">
         
         <form method="POST">
@@ -44,13 +44,13 @@ img {{
 </html>
 """
 
-@app.route("/", methods=['POST'])
+@app.route("/")
 def index():
     
     return form.format('')
 
 
-@app.route("/encrypt", methods=['POST'])
+@app.route("/", methods=['POST'])
 def encrypt():
     rot = request.form["rot"]
     text = request.form["text"]
