@@ -30,14 +30,14 @@ img {{
 </style>
     <body background="https://drive.google.com/uc?id=1q8O7pIYBXas8Jwwgx6yteDSZfu3BTgvG" style ="width:70%;">
         
-    <form method="POST">
-
-        <input type="text" name="rot" value=0 />
+        <form method="POST">
+            <label>Rotate by</label>
+            <input type="text" name="rot" value=0 />
         
-        <textarea name="text" name="text" />{0} </textarea>
+            <textarea name="text" name="text" />{0} </textarea>
 
-        <input type="submit" value="Encrypt It" />
-    </form>
+            <input type="submit" value="Encrypt It" />
+        </form>
 
 
     </body>
@@ -47,7 +47,7 @@ img {{
 @app.route("/", methods=['POST'])
 def index():
     
-    return form.format
+    return form.format('')
 
 
 @app.route("/encrypt", methods=['POST'])
@@ -56,5 +56,7 @@ def encrypt():
     text = request.form["text"]
     rot = int(rot)
     words = rotate_string(text, rot)
+
+    return form.format(rotate_string(words, rot))
 
 app.run()
