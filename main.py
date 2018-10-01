@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 app.config['DEBUG'] = True
 
-page_body = """
+form = """
 <!DOCTYPE html>
 <html>
 <style>
-form {
+form {{
                 background-color: #eee;
                 padding: 20px;
                 margin: 0 auto;
@@ -21,33 +21,40 @@ form {
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }
-img {
+            }}
+img {{
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
+}}
 </style>
     <body background="https://drive.google.com/uc?id=1q8O7pIYBXas8Jwwgx6yteDSZfu3BTgvG" style ="width:70%;">
-        <h1>Hello world!</h1>
-        <p><a href="https://www.w3schools.com">Visit W3Schools.com!</a></p>
+        
+    <form method="POST">
+
+        <input type="text" name="rot" value=0 />
+        
+        <textarea name="text" name="text" />{0} </textarea>
+
+        <input type="submit" value="Encrypt It" />
+    </form>
+
+
     </body>
 </html>
 """
-caesar_form = """
-    <form action="/casesar-it" method="post">
 
-        <input type="text" name-"rot" label="Encrypt It">
-        
-        <textarea name="text" name="text" value=0>
-    </form>
-"""
-
-
-@app.route("/")
+@app.route("/", methods=['POST'])
 def index():
-    content = page_body
+    
+    return form.format
 
-    return content
+
+@app.route("/encrypt", methods=['POST'])
+def encrypt():
+    rot = request.form["rot"]
+    text = request.form["text"]
+    rot = int(rot)
+    words = rotate_string(text, rot)
 
 app.run()
