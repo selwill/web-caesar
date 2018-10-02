@@ -28,8 +28,7 @@ form = """
             margin-right: auto;
         }}
     </style>
-    <body background="https://drive.google.com/uc?id=1_oMQ4KA4Q_gepEWsRrJhK-zS50rQb9gS" style ="width:70%;">
-        
+            
         <form method="POST">
             <label>Rotate by</label>
             <input type="text" name="rot" value=0 />
